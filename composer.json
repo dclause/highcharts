@@ -4,6 +4,7 @@
   "type": "drupal-module",
   "license": "GPL-2.0+",
   "homepage": "https://github.com/dclause/highcharts",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Dominique CLAUSE (dom.)",
