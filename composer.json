@@ -1,0 +1,17 @@
+{
+  "name": "drupal/highcharts",
+  "description": "HighChart API defines a form API element to render an highchart from code.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "https://eureka-game.com/reservations",
+  "authors": [
+    {
+      "name": "Dominique CLAUSE (dom.)",
+      "homepage": "https://www.drupal.org/u/Dom.",
+      "role": "Creator, Maintainer"
+    }
+  ],
+  "require": {
+    "ghunti/highcharts-php": "~2.0"
+  }
+}
