@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\highcharts\Element;
+namespace Drupal\highcharts_render\Element;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Render\Element\RenderElement;
@@ -18,7 +18,7 @@ use Drupal\Core\Render\Element\RenderElement;
  *
  * @RenderElement("highchart")
  */
-class Highchart extends RenderElement {
+class HighchartElement extends RenderElement {
 
   /**
    * {@inheritdoc}
@@ -30,10 +30,11 @@ class Highchart extends RenderElement {
         [$class, 'preRenderHighChart'],
       ],
       '#value' => NULL,
+      '#debug' => FALSE,
       '#theme' => 'highchart',
       '#theme_wrappers' => ['form_element'],
       '#attached' => [
-        'library' => ['highcharts/highchart'],
+        'library' => ['highcharts_render/highchart'],
       ],
     ];
   }
@@ -48,13 +49,21 @@ class Highchart extends RenderElement {
    *   The $element with prepared variables ready for highchart.html.twig.
    */
   public static function preRenderHighChart($element) {
+    $id = Html::getUniqueId('highchart');
     $element['#attributes']['type'] = 'highchart';
     $element['#attributes']['class'][] = 'highchart';
-    $element['#attributes']['class'][] = Html::getUniqueId('highchart');
+    $element['#attributes']['id'] = $id;
+    //$element['#attributes']['style'] = 'width:200px; height:150px';
 
-    if ($element['#value']) {
-      $chart = $element['#value'];
-      dsm($chart->render("chart"));
+    /** @var \Drupal\highcharts_render\Highcharts\Highchart $chart */
+    if ($chart = $element['#value']) {
+      $data = $chart->serialize($element['#debug']);
+      if ($element['#debug']) print($data);
+      $element['#attached']['drupalSettings']['highchartsRender'][$chart->getChartType()]["#$id"] = $data;
+      $element['#attached']['library'][] = 'highcharts_render/highchart.' . strtolower($chart->getChartType());
+      foreach ($chart->getExtraScripts() as $key) {
+        $element['#attached']['library'][] = 'highcharts_render/highchart.' . $key;
+      }
     }
     return $element;
   }

@@ -1,5 +1,5 @@
 {
-  "name": "dclause/highcharts",
+  "name": "dclause/highcharts_render",
   "description": "HighChart API defines a form API element to render an highchart from code.",
   "type": "drupal-module",
   "license": "GPL-2.0+",
@@ -11,8 +11,5 @@
       "homepage": "https://www.drupal.org/u/Dom.",
       "role": "Creator, Maintainer"
     }
-  ],
-  "require": {
-    "ghunti/highcharts-php": "~3.0"
-  }
+  ]
 }

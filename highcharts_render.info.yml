@@ -1,0 +1,6 @@
+name: HighCharts Render
+type: module
+description: "HighChart Render defines a form API element to render an highchart from code."
+core: 8.x
+package: Form
+version: '8.x-1.0'

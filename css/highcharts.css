@@ -1,0 +1,13 @@
+.form-type-highchart label {
+  text-align: center;
+  display: block;
+  font-size: 1.1em;
+}
+.form-type-highchart .description {
+  text-align: center;
+}
+.form-type-highchart .highchart {
+  min-width: 310px;
+  height: 400px;
+  margin: 0 auto;
+}

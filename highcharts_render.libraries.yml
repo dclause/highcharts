@@ -1,0 +1,98 @@
+highchart:
+  version: VERSION
+  js:
+    js/highcharts.js: {}
+  css:
+    theme:
+      css/highcharts.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+highchart.chart:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/highcharts.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+highchart.stock:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/highstock.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+highchart.map:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/highmaps.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+highchart.more:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/highcharts-more.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - highcharts_render/highchart.chart
+
+highchart.exporting:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/modules/exporting.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+highchart.3d:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/highcharts-3d.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - highcharts_render/highchart.chart
+
+highchart.drilldown:
+  remote: https://www.highcharts.com/download
+  version: VERSION
+  license:
+    name: MIT
+    url: https://www.highcharts.com
+    gpl-compatible: true
+  js:
+    /libraries/highcharts/modules/drilldown.js: { minified: true }
+  dependencies:
+    - core/jquery
